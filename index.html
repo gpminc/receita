@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receita</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="img-pao">
+            <img src="./Imagens/5 RECEITAS DE PÃO DELICIA.jpeg" alt="">
+            <div>
+                <h1>RECEITA PÃOZINHO</h1>
+            </div>
+        </div>
+        <div id="conteudo-principal">
+            <br>
+            <br>
+            <div id="ingredientes">
+                <h2>INGREDIENTES</h2>
+            <br>
+            <br>
+            <ol>
+                <li>500g de farinha de trigo (sem fermento)</li>
+                <li>200ml de leite morno</li>
+                <li>4 colheres (sopa) de açúcar</li>
+                <li>1/2 colher (sopa) de sal</li>
+                <li>2 colheres (sopa) manteiga</li>
+                <li>2 ovos inteiros</li>
+                <li>1 sachê de fermento biológico seco (10g)</li>
+                <li>50g de queijo ralado (eu usei parmesão)</li>
+                <li>2 colheres (sopa de manteiga derretida para pincelar os pães)</li>
+            </ol>
+            </div>
+            <div id="tempo">
+                <h2>TEMPO E TEMPERATURA</h2>
+                <br>
+                <br>
+                <p>Temperatura do forno: 180°C <br>
+                    Tempo: 15 minutos, mas vai depender de cada forno.
+                </p>  
+            </div>
+            <div id="modo">
+                <h2>MODO DE PREPARO</h2>
+                <br>
+                <br>
+                <p>Antes de começar a receita devemor peneirar as 500g de farinha de trigo. Colocamos em um liquidificador os dois ovos inteiros, quatro colheres
+                 de sopa de açúcar, manteiga (duas colheres), meia colher de sopa de sal, formento eciológico e 200ml de leite, bater tudo, depois em um pote vamos
+                  colocar farinha de trigo e misturar aos poucos com a mistura do liquidificador. Após isso devemos sovar ela, depois deixar os pãezinhos descansando
+                   por 1 hora e colocarmos na forma para assar a 180° graus por 20 minutos. Quando estiver assado passamos a manteiga derretida nele com o queijo
+                    ralado em cima.</p>   
+            </div>
+                 
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const divBotao = document.getElementById("link-btn");
+    const container = document.querySelector("#bloco-1");
+    const header = document.querySelector("header");
+
+    function moverBotao() {
+        if (window.innerWidth <= 768) {
+            // Move a div do botão para o container se estiver em um dispositivo móvel
+            if (!container.contains(divBotao)) {
+                container.appendChild(divBotao);
+                divBotao.style.display = "block"; // Exibe a div no container
+            }
+        } else {
+            // Retorna a div do botão para o header se a tela for maior
+            if (!header.contains(divBotao)) {
+                header.appendChild(divBotao);
+                divBotao.style.display = "flex"; // Exibe a div no header
+            }
+        }
+    }
+
+    // Executa ao carregar a página
+    moverBotao();
+
+    // Adiciona um listener para a mudança de tamanho da tela
+    window.addEventListener("resize", moverBotao);
+});
+
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+    </script>
+</body>
+</html>
