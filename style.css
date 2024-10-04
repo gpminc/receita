@@ -86,6 +86,10 @@ ol{
 
     #img-pao div{
         margin-left: 4%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     #img-pao h1{
